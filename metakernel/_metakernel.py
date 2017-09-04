@@ -153,6 +153,7 @@ class MetaKernel(Kernel):
             self.shell_handlers[msg_type] = getattr(self.comm_manager, msg_type)
         self._ipy_formatter = IPythonDisplayFormatter()
         self.env = {}
+        self.shell = None
         self.reload_magics()
         # provide a way to get the current instance
         self.set_variable("kernel", self)
